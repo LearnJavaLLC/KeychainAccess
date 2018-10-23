@@ -719,7 +719,7 @@ public final class Keychain {
         let status = SecItemCopyMatching(query as CFDictionary, nil)
         
         switch status {
-        case errSecInteractionNotAllowed:
+        case errSecInteractionNotAllowed, errSecSuccess:
             return true
             
         case errSecItemNotFound:
